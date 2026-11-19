@@ -747,3 +747,22 @@ tr:last-child td {
     display: none;
   }
 }
+
+.note {
+  border: 1px solid color-mix(in srgb, #f5b84b 35%, transparent);
+  background: color-mix(in srgb, #f5b84b 8%, transparent);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 14.5px;
+  color: var(--muted);
+  margin: -12px 0 28px;
+}
+
+.note strong {
+  color: #f5b84b;
+}
+
+.section > p.alt {
+  font-size: 14px;
+  color: var(--muted);
+}

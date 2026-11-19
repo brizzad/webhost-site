@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="dark" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="description" content="Remote desktop, terminal and system management for your own Windows and Linux computers, from the browser." />
-    <title>Remote Control</title>
+    <title>WEBHOST</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,7 +16,7 @@
   <body>
     <header class="nav">
       <div class="wrap nav-inner">
-        <a class="brand" href="#top"><img src="favicon.svg" alt="" width="28" height="28" /> Remote Control</a>
+        <a class="brand" href="#top"><img src="favicon.svg" alt="" width="28" height="28" /> WEBHOST</a>
         <nav class="nav-links" aria-label="Sections">
           <a href="#download">Download</a>
           <a href="#how">How it works</a>
@@ -32,7 +32,7 @@
           <p class="eyebrow"><span class="dot"></span> Windows &amp; Linux · no account, no server</p>
           <h1>Your computers, from any browser.</h1>
           <p class="lead">
-            Install Remote Control on a computer, set a password and an authenticator code, and you get a 9-digit ID. From
+            Install WEBHOST on a computer, set a password and an authenticator code, and you get a 9-digit ID. From
             anywhere, open this website, enter the ID and sign in: you get its desktop, a terminal and its vital signs.
           </p>
           <div class="cta">
@@ -42,7 +42,7 @@
         </div>
 
         <div class="mock" aria-hidden="true">
-          <div class="mock-bar"><span></span><span></span><span></span><em>Remote Control</em></div>
+          <div class="mock-bar"><span></span><span></span><span></span><em>WEBHOST</em></div>
           <div class="mock-body">
             <div class="mock-head">
               <strong>Your computers</strong>
@@ -63,26 +63,27 @@
 
       <section id="download" class="wrap section">
         <h2>Install on the computer you want to reach</h2>
-        <p class="sub">The installer downloads Remote Control, walks you through the sign-in setup and starts it at boot. It shows the computer ID at the end.</p>
+        <p class="sub">The installer downloads WEBHOST, checks it, walks you through the sign-in setup and starts it at boot. It shows the computer ID at the end. Running it again updates WEBHOST and keeps the ID and your sign-in.</p>
+        <p class="note"><strong>Beta.</strong> This is the first public test version. Connections are direct between your browser and the computer, so networks that block direct connections (some mobile, office and guest networks) cannot connect yet.</p>
 
         <div class="split">
           <div class="dl">
             <h3><span class="os os-win"></span> Windows 10 / 11</h3>
             <p>In PowerShell (not as administrator; it asks once for the background service):</p>
-            <pre><code>irm https://brizzad.github.io/remote-control-site/install.ps1 | iex</code></pre>
-            <p class="alt">Or download <a href="https://github.com/brizzad/remote-control-site/releases/latest/download/rcagent-windows-x86_64.exe">rcagent.exe</a> and run <code>rcagent setup</code>, then <code>rcagent service install</code> as administrator.</p>
+            <pre><code>irm https://brizzad.github.io/webhost-site/install.ps1 | iex</code></pre>
+            <p class="alt">Or download <a href="https://github.com/brizzad/webhost-site/releases/latest/download/webhost-windows-x86_64.exe">webhost.exe</a> and run <code>webhost setup</code>, then <code>webhost service install</code> as administrator.</p>
           </div>
           <div class="dl">
             <h3><span class="os os-arch"></span> Arch Linux</h3>
             <p>In a terminal inside your desktop session (KDE Plasma, GNOME, Hyprland, Sway or X11):</p>
-            <pre><code>curl -fsSL https://brizzad.github.io/remote-control-site/install.sh | bash</code></pre>
-            <p class="alt">Or install the <a href="https://github.com/brizzad/remote-control-site/releases/latest/download/remote-control-x86_64.pkg.tar.zst">package</a> with <code>sudo pacman -U</code>, then run <code>rcagent setup</code> and <code>rcagent service install</code>.</p>
+            <pre><code>curl -fsSL https://brizzad.github.io/webhost-site/install.sh | bash</code></pre>
+            <p class="alt">Or install the <a href="https://github.com/brizzad/webhost-site/releases/latest/download/webhost-x86_64.pkg.tar.zst">package</a> with <code>sudo pacman -U</code>, then run <code>webhost setup</code> and <code>webhost service install</code>.</p>
           </div>
           <div class="dl">
             <h3><span class="os os-linux"></span> Other Linux (x86_64)</h3>
             <p>The same script installs the program to <code>~/.local/bin</code>:</p>
-            <pre><code>curl -fsSL https://brizzad.github.io/remote-control-site/install.sh | bash</code></pre>
-            <p class="alt">Or the plain <a href="https://github.com/brizzad/remote-control-site/releases/latest/download/rcagent-linux-x86_64">binary</a>.</p>
+            <pre><code>curl -fsSL https://brizzad.github.io/webhost-site/install.sh | bash</code></pre>
+            <p class="alt">Or the plain <a href="https://github.com/brizzad/webhost-site/releases/latest/download/webhost-linux-x86_64">binary</a>.</p>
           </div>
           <div class="dl">
             <h3><span class="os os-key"></span> What you need</h3>
@@ -99,23 +100,38 @@
             </thead>
             <tbody>
               <tr><td>KDE Plasma (Wayland)</td><td>Screen-sharing portal + PipeWire</td><td>Yes: setup grants the permission (System Settings › Application Permissions)</td></tr>
-              <tr><td>GNOME (Wayland)</td><td>Screen-sharing portal + PipeWire</td><td>After approving once on the computer</td></tr>
+              <tr><td>GNOME (Wayland)</td><td>Screen-sharing portal + PipeWire</td><td>After approving once on the computer (not tested yet)</td></tr>
               <tr><td>Hyprland, Sway, other wlroots</td><td><code>wayvnc</code></td><td>Yes</td></tr>
               <tr><td>X11 (any desktop)</td><td><code>x11vnc</code></td><td>Yes</td></tr>
             </tbody>
           </table>
         </div>
 
+        <p class="alt">The installer adds what your desktop needs (the KDE or GNOME portal, <code>wayvnc</code> or <code>x11vnc</code>). The remote desktop works while you are signed in to your desktop; the terminal also works before you sign in.</p>
+
         <h3 class="mt">Useful commands on the computer</h3>
-        <pre><code>rcagent status                         <span class="c"># computer ID, what is allowed, desktop backend</span>
-rcagent allow desktop,terminal,power   <span class="c"># what may be used remotely (power is off by default)</span>
-rcagent setup --force                  <span class="c"># new password / authenticator, same ID</span>
-rcagent service uninstall              <span class="c"># stop and remove</span></code></pre>
+        <pre><code>webhost status                         <span class="c"># computer ID, owner, whether it is running, desktop backend</span>
+webhost allow desktop,terminal,power   <span class="c"># what may be used remotely (power is off by default)</span>
+webhost setup --force                  <span class="c"># new password / authenticator, same ID</span></code></pre>
+        <p class="alt">On Windows, open a new terminal after installing to use them. Changes apply to the background service when run in an administrator terminal (or run the installer again); on Linux they apply at once.</p>
+
+        <h3 class="mt">Uninstall</h3>
+        <div class="split">
+          <div class="dl">
+            <h3><span class="os os-win"></span> Windows</h3>
+            <pre><code>irm https://brizzad.github.io/webhost-site/uninstall.ps1 | iex</code></pre>
+          </div>
+          <div class="dl">
+            <h3><span class="os os-linux"></span> Linux</h3>
+            <pre><code>curl -fsSL https://brizzad.github.io/webhost-site/uninstall.sh | bash</code></pre>
+          </div>
+        </div>
+        <p class="alt">It removes the service and the program and asks whether to keep this computer's ID and sign-in for a later install.</p>
       </section>
 
       <section id="how" class="wrap section">
         <h2>How it works</h2>
-        <p class="sub">There is no Remote Control server. The website is static; your browser talks straight to your computer.</p>
+        <p class="sub">There is no WEBHOST server. The website is static; your browser talks straight to your computer.</p>
         <div class="flow">
           <div class="node">
             <span class="tag">Anywhere</span>
@@ -126,7 +142,7 @@ rcagent service uninstall              <span class="c"># stop and remove</span><
           <div class="node node-accent">
             <span class="tag">At home or work</span>
             <b>Your computer</b>
-            <small>rcagent</small>
+            <small>webhost</small>
           </div>
         </div>
         <ol class="steps">
@@ -153,7 +169,7 @@ rcagent service uninstall              <span class="c"># stop and remove</span><
           </div>
           <div class="point">
             <h3>The computer decides</h3>
-            <p>Desktop, terminal and power are allowed or not on the computer itself (<code>rcagent allow</code>). Everything about your computers stays on them and in your browser; nothing is stored anywhere else.</p>
+            <p>Desktop, terminal and power are allowed or not on the computer itself (<code>webhost allow</code>). Everything about your computers stays on them and in your browser; nothing is stored anywhere else.</p>
           </div>
         </div>
       </section>
@@ -161,7 +177,7 @@ rcagent service uninstall              <span class="c"># stop and remove</span><
 
     <footer class="footer">
       <div class="wrap footer-inner">
-        <span><img src="favicon.svg" alt="" width="20" height="20" /> Remote Control</span>
+        <span><img src="favicon.svg" alt="" width="20" height="20" /> WEBHOST</span>
         <span class="muted">Prototype</span>
       </div>
     </footer>
